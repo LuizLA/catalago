@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Produtos</a>
+            <a href="#">Painel</a>
+        </nav>
+    </header>
+    <form class="login">
+        <h3>Area do <span>cliente</span></h3>
+        <p>criando uma descrição qualquer</p>
+        <div class="row">
+            <label>E-mail</label>
+            <input type="text" placeholder="pesquisar produto">
+        </div>
+        <div class="row">
+            <label>Senha</label>
+            <input type="password" placeholder="*****">
+        </div>
+        <div class="btn-group">
+            <button class="btnLogin">Entrar</button>
+            <button id="btnCadastrar">Cadastrar</button>
+        </div>
+    </form>
+
+    <div class="cadastro">
+        <h2>Realize seu <span>Cadastro</span></h2>
+        <p>Nosso time esta fazendo o melhor para você e sua família.</p>
+        <div class="row">
+            <label>Nome completo</label>
+            <input type="text" placeholder="nome">
+        </div>
+        <div class="row">
+            <label>E-mail</label>
+            <input type="text" placeholder="email">
+        </div>
+        <div class="row">
+            <label>Telefone</label>
+            <input type="text" placeholder="(62) 9 9999-9999">
+        </div>
+        <div class="row">
+            <label>Senha</label>
+            <input type="password" placeholder="*********">
+        </div>
+        <div class="btn-cadastrar">
+            <button>Cadastrar</button>
+            <button id="btnCancelar">Cancelar</button>
+        </div>
+    </div>
+
+    <style>
+        *{ 
+            text-decoration: none; 
+            margin: 0; padding: 0;
+            box-sizing: border-box;
+        } 
+        body{
+            color: white;
+            background-color: blueviolet; 
+        }
+        header{ 
+            height: 100px;
+            width: 100vw;
+            background-color: black;
+
+            
+        }
+        h3, h2{
+            font-size: 2rem;
+            text-align: center;
+        }
+        span{
+            color: green;
+        }
+        nav{ 
+            width: 100vw;
+            height: 100px;
+
+            gap: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        a{ 
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: green;
+
+            opacity: .6;
+            transition: .3s;
+        }
+        a:hover{
+            opacity: 1;
+        }
+        form{
+            margin: auto;
+            margin-top: 50px;
+
+            width: 250px;
+            height: 300px;
+            border-radius: 20px;
+            background-color: #1d1d1d;
+
+            padding: 20px;
+
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+        input{
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 7px;
+        }
+        .btn-group{
+            margin: 10px;
+            width: 100%;
+            gap: 10px;
+            display: flex;
+        }
+        button{
+            flex: 1;
+            padding: 7px;
+
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            cursor: pointer;
+            border: none;
+            border-radius: 7px;
+            transition: .3s;
+        }
+        button:hover{
+            color: white;
+            transform: scale(1.09);
+            background-color: green;
+        }
+
+        /* ESTILIZANDO O CADASTRAR */
+        .cadastro{
+            width: 400px;
+            height: 500px;
+            background-color: #1d1d1d;
+
+            padding: 20px;
+            gap: 10px;
+            display: flex;
+            flex-direction: column;
+
+            border-radius: 20px;
+
+            top: 150px;
+            left: 800px;
+            position: absolute;
+
+            display: none;
+        }
+        .cadastro p{
+            font-size: 1.2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-cadastrar{
+            margin-top: 20px;
+            width: 100%;
+            
+            gap: 10px;
+            display: flex;
+        }
+    </style>
+
+    <script>
+        var btnCadastrar = document.querySelector("#btnCadastrar")
+        var btnCancelar = document.querySelector("#btnCancelar")
+        var btnLogin = document.querySelector(".btnLogin")
+
+        var ctxCadastro = document.querySelector(".cadastro")
+        var ctxLogin = document.querySelector(".login")
+
+        btnCadastrar.onclick = function(event) {
+            event.preventDefault()
+
+            ctxLogin.style.display = "none"
+            ctxCadastro.style.display = "flex"
+        }
+        btnCancelar.onclick = function(){
+            ctxLogin.style.display = "flex"
+            ctxCadastro.style.display = "none"
+        }
+        btnLogin.onclick = function(){
+            alert('Usuário ou senha não encontrados')
+        }
+    </script>
+</body>
+</html>
